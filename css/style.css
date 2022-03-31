@@ -13,6 +13,7 @@ body {
   line-height: 1.6;
 }
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -27,14 +28,16 @@ ul{
 }
 
 .container{
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
+    padding: 0 40px;
 }
 .flex{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    flex-wrap: wrap;
 }
 .grid{
     display: grid;
@@ -112,6 +115,8 @@ ul{
 }
 .showcase-text{
     margin-top: 80px;
+    animation-name: leftToRight;
+    animation-duration: 1.5s;
 }
 
 .showcase .card{
@@ -121,6 +126,8 @@ ul{
 }
 .showcase-form{
     padding: 40px;
+    animation-name: rightToLeft;
+    animation-duration: 1.5s;
 }
 .showcase-form h3{
     color: var(--dark-color);
@@ -143,6 +150,7 @@ ul{
 .stats{
     padding-top: 100px;
     padding-bottom: 50px;
+    animation: bottomToTop 1.5s;
 }
 .stats-heading{
     width: 500px;
@@ -227,4 +235,32 @@ ul{
 
 .socials i{
     margin-left: 15px;
+}
+
+
+@keyframes rightToLeft{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes leftToRight{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes bottomToTop{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
 }
